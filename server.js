@@ -10,6 +10,10 @@ const fetch = require('node-fetch');
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/loaderio-48170565c38db7751663fd0fe4a22486', (req, res) => {
+  console.log("received: ", res)
+  res.sendFile(__dirname + '/loaderio-48170565c38db7751663fd0fe4a22486.txt');
+});
 
 // // AVH
 // app.get('/api/reviews/:productId', (req, res) => {
